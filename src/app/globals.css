@@ -1,23 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  /* Azure Assurance Palette */
+  /* Azure Assurance Palette - Định nghĩa các biến Tailwind CSS v4 */
   --color-primary: #006194;
   --color-primary-container: #007bb9;
   --color-background: #f7f9fb;
   --color-surface: #f7f9fb;
+  --color-surface-container-low: #f1f3f5;
+  --color-surface-container-high: #e9ecef;
   --color-on-surface: #191c1e;
   --color-on-surface-variant: #3f4850;
   --color-outline-variant: rgba(191, 199, 210, 0.15);
+  --color-on-primary: #ffffff;
   
+  /* Font & Radius */
+  --font-outfit: "Outfit", sans-serif;
   --radius-xl: 16px;
   --radius-lg: 12px;
   --radius-md: 8px;
   
   --shadow-ambient: 0px 20px 40px rgba(25, 28, 30, 0.06);
-
-  /* Typography Standard */
-  --font-outfit: "Outfit", sans-serif;
 }
 
 :root {
@@ -36,21 +38,22 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-outfit);
-  line-height: var(--leading-relaxed);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4 {
-  line-height: var(--leading-tight);
+  line-height: 1.2;
   letter-spacing: -0.02em;
-}
-
-p {
-  line-height: var(--leading-relaxed);
 }
 
 .glass-nav {
   background: rgba(247, 249, 251, 0.8);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px) saturate(180%);
   border-bottom: 1px solid var(--color-outline-variant);
 }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
